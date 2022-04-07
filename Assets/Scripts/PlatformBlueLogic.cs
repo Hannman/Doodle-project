@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformBlueLogic : MonoBehaviour
+public class PlatformBlueLogic : PlatformCommonLogic
 {
     [SerializeField] private float _positionDelta = 0.1f;
     private bool _currentDirection;
@@ -12,6 +12,10 @@ public class PlatformBlueLogic : MonoBehaviour
     {
         _currentDirection = Random.value > 0.5f;
         GetLimit();
+    }
+    private void Update()
+    {
+        ExistenceEvaluation();
     }
 
     void FixedUpdate()

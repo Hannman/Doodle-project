@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static float PlayerCurrentPositionY; 
+
     [SerializeField] private float _speedHorizontal = 8f;
     [SerializeField] private float _speedVertical = 10f;
 
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerDirection();
         PossitionCheck();
+        PlayerCurrentPositionY = transform.position.y;
     }
 
   
