@@ -11,8 +11,10 @@ public class PlatformBlueLogic : PlatformCommonLogic
     void Awake()
     {
         _currentDirection = Random.value > 0.5f;
+        value = 20;
         GetLimit();
     }
+
     private void Update()
     {
         ExistenceEvaluation();

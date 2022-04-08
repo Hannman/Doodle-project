@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlatformGreenLogic : PlatformCommonLogic
 {
+    private void Awake()
+    {
+        value = 30;
+    }
+
     private void Update()
     {
         ExistenceEvaluation();

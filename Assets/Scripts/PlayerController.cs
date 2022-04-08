@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
             if (collision.relativeVelocity.y >= 0)
             {
                 _rigidbody.velocity = Vector2.up * _speedVertical;
+                PlatformCommonLogic platform = collision.gameObject.GetComponent<PlatformCommonLogic>();
+                platform.ScoreIncrease();
             }
         }
     }
