@@ -11,7 +11,6 @@ public static  class GameSettings
         screenWidth = 640; //ширина экрана
         heroWidth = 80; //ширина героя
         destructionHight = 5f;//расстояние пропадания платформ
-
     }
 
 

@@ -9,7 +9,6 @@ public class PlatformCommonLogic : MonoBehaviour
         var deltaX = PlayerController.PlayerCurrentPositionY - this.transform.position.y;
         if (deltaX > GameSettings.destructionHight)
         {
-            Debug.Log("Destroy");
             Destroy(this.gameObject);
         }
     }

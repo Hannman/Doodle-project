@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _sprite = GetComponent<SpriteRenderer>();
         GetLimit();
-
     }
 
 
@@ -48,7 +47,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Platform")
         {
-            _rigidbody.velocity = Vector2.up * _speedVertical;
+            if (collision.relativeVelocity.y >= 0)
+            {
+                _rigidbody.velocity = Vector2.up * _speedVertical;
+            }
         }
     }
 
