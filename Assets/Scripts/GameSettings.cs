@@ -2,12 +2,16 @@ using UnityEngine;
 
 public static  class GameSettings
 {
+    
+
     public static float screenWidth { get; set; }
     public static float heroWidth { get; set; }
     public static float platformWidth { get; set; }
     public static float platformLimit { get; set; }
     public static float destructionHight { get; }
     public static int currentScore { get; set; }
+    public static int failedScore { get; set; }
+    public static int levelDelta { get; }
     public static int level { get; set; }
 
 
@@ -17,6 +21,8 @@ public static  class GameSettings
 
         destructionHight = 10f;//расстояние пропадания платформ
         currentScore = 0;
+        failedScore = 0;
+        levelDelta = 300;
         level = 1;
         Calulate();
     }
@@ -31,8 +37,6 @@ public static  class GameSettings
         heroWidth = _density * heroWidthInPixels;
         platformWidth = _density * platformWidthInPixels;
         platformLimit = (screenWidth - platformWidth) / 2;
-        Debug.Log($"Screen.height - {Screen.height}; Screen.width - {Screen.width}.");
-        Debug.Log($"screenWidth - {screenWidth}; heroWidth - {heroWidth}; platformWidth - {platformWidth}; platformLimit - {platformLimit}.");
     }
 
 }

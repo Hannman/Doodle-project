@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public static float PlayerCurrentPositionY;
 
-    [SerializeField] private float _speedHorizontal = 8f;
+    [SerializeField] private float _speedHorizontal = 15f;
     [SerializeField] private float _speedVertical = 10f;
 
 
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _input = Input.GetAxis("Horizontal")*2 + Input.acceleration.x*2;
+        _input = Input.GetAxis("Horizontal") + Input.acceleration.x;
         _rigidbody.velocity = new Vector2(_input * _speedHorizontal, _rigidbody.velocity.y);
 
     }

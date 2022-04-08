@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public static int score;
     public TextMeshProUGUI scoreText;
-    
-    private static int  startScore;
+
+    private static int startScore;
 
     public GameManager()
     {
@@ -32,13 +32,14 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerController.PlayerCurrentPositionY + 15f < Camera.main.transform.position.y)
         {
+            GameSettings.failedScore = score;
             LoadManager.Lose();
         }
 
     }
     private void CheckWin()
     {
-        if (score - 300 >= GameSettings.currentScore)
+        if (score >= GameSettings.currentScore + GameSettings.levelDelta)
         {
             GameSettings.currentScore = score;
             GameSettings.level++;
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     public static void UpdateScore()
     {
-        score = (int)(Camera.main.transform.position.y*10) + startScore;
+        score = (int)(Camera.main.transform.position.y * 10) + startScore;
 
         instance.scoreText.text = $"Score: {score}";
         instance.CheckWin();

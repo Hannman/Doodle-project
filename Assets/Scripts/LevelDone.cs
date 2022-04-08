@@ -12,7 +12,7 @@ public class LevelDone : MonoBehaviour
     {
         _text = GetComponent<TextMeshProUGUI>();
         _text.text = $"Level {GameSettings.level - 1} completed!";
-        _buttonText.text = $"Start level {GameSettings.level}...";
+        _buttonText.text = $"NEXT (LEVEL {GameSettings.level})";
     }
 
 }
