@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PlatformBlueLogic : PlatformCommonLogic
 {
-    [SerializeField] private float _positionDelta = 0.1f;
+    [SerializeField] private float _positionDelta = 0.03f;
     private bool _currentDirection;
     private float _limit;
 
     void Awake()
     {
         _currentDirection = Random.value > 0.5f;
-        value = 20;
-        GetLimit();
+        _limit = GameSettings.platformLimit;
     }
 
     private void Update()
@@ -57,11 +56,4 @@ public class PlatformBlueLogic : PlatformCommonLogic
         
         gameObject.transform.position = _nextPosition;
     }
-
-    private void GetLimit()
-    {
-        _limit = (float)(GameSettings.screenWidth - 128) / 200;
-    }
-
-
 }

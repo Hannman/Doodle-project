@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _input = Input.GetAxis("Horizontal") + Input.acceleration.x;
+        _input = Input.GetAxis("Horizontal")*2 + Input.acceleration.x*2;
         _rigidbody.velocity = new Vector2(_input * _speedHorizontal, _rigidbody.velocity.y);
 
     }
@@ -50,8 +50,6 @@ public class PlayerController : MonoBehaviour
             if (collision.relativeVelocity.y >= 0)
             {
                 _rigidbody.velocity = Vector2.up * _speedVertical;
-                PlatformCommonLogic platform = collision.gameObject.GetComponent<PlatformCommonLogic>();
-                platform.ScoreIncrease();
             }
         }
     }
@@ -69,18 +67,18 @@ public class PlayerController : MonoBehaviour
     {
         if (_rigidbody.position.x > _limitPosition)
         {
-            _rigidbody.position = new Vector2(_rigidbody.position.x - (float)GameSettings.screenWidth / 100, _rigidbody.position.y);
+            _rigidbody.position = new Vector2(_rigidbody.position.x - GameSettings.screenWidth, _rigidbody.position.y);
         }
 
         if (_rigidbody.position.x < (-_limitPosition))
         {
-            _rigidbody.position = new Vector2(_rigidbody.position.x + (float)GameSettings.screenWidth / 100, _rigidbody.position.y);
+            _rigidbody.position = new Vector2(_rigidbody.position.x + GameSettings.screenWidth, _rigidbody.position.y);
         }
     }
 
     private void GetLimit()
     {
-        _limitPosition = (float)(GameSettings.screenWidth + GameSettings.heroWidth) / 200;
+        _limitPosition = (GameSettings.screenWidth + GameSettings.heroWidth) / 2;
     }
 
 }

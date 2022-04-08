@@ -15,13 +15,13 @@ public class LevelGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _limit = (float)(GameSettings.screenWidth - 128) / 200;
+        _limit = GameSettings.platformLimit;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_newPosition.y - 10f < Camera.main.transform.position.y)
+        if (_newPosition.y - 15f < Camera.main.transform.position.y)
         {
             GeneratePlatforms();
         }
@@ -29,7 +29,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void GeneratePlatforms()
     {
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 30; i++)
         {
             _newPosition.y += Random.Range(_minY, _maxY);
             _newPosition.x = Random.Range((-_limit), _limit);

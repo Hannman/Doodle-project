@@ -5,11 +5,6 @@ public class PlatformBrownLogic : PlatformCommonLogic
 {
     public SpriteRenderer _poofSpriteRenderer;
 
-    private void Awake()
-    {
-        value = 30;
-    }
-
     private void Update()
     {
         ExistenceEvaluation();
@@ -19,7 +14,6 @@ public class PlatformBrownLogic : PlatformCommonLogic
     {
         if (collision.relativeVelocity.y <= 0)
         {
-            ScoreIncrease();
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             _poofSpriteRenderer.enabled = true;
             StartCoroutine(poofSequence(0.1f));

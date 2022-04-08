@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3914570253397233029}
   - component: {fileID: 3914570253397233026}
-  - component: {fileID: 5218652482983766465}
-  - component: {fileID: 7349031595786582634}
   - component: {fileID: 3914570253397233028}
+  - component: {fileID: 6190216573783310253}
+  - component: {fileID: 9041222854017055919}
   m_Layer: 0
   m_Name: PlatformBrown
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3914570253397233024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.7, y: 0.06, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3914570254333850825}
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 67dd318e13ebeab4999b47e87dbba5b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f17addd8270792499f6e4bf29f4791e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,7 +86,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &5218652482983766465
+--- !u!114 &3914570253397233028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3914570253397233024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19309ca500116c14383f8c473a882cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _poofSpriteRenderer: {fileID: 3914570254333850824}
+--- !u!68 &6190216573783310253
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,13 +115,13 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1.1, y: 0.19}
-  - {x: 1, y: 0.19}
+  - {x: -0.55, y: 0.1}
+  - {x: 0.5, y: 0.1}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!251 &7349031595786582634
+--- !u!251 &9041222854017055919
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,19 +140,6 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &3914570253397233028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3914570253397233024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19309ca500116c14383f8c473a882cdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _poofSpriteRenderer: {fileID: 3914570254333850824}
 --- !u!1 &3914570254333850838
 GameObject:
   m_ObjectHideFlags: 0
