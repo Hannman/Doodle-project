@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public static  class GameSettings
 {
     public static int screenWidth { get; set; }
@@ -10,7 +12,8 @@ public static  class GameSettings
     static GameSettings()
     {
         //Default settings
-        screenWidth = 640; //ширина экрана
+        //screenWidth = 640; //ширина экрана
+        screenWidth = Screen.currentResolution.width;
         heroWidth = 80; //ширина героя
         destructionHight = 5f;//расстояние пропадания платформ
         currentScore = 0;

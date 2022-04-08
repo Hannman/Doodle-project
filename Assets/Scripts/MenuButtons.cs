@@ -13,4 +13,9 @@ public class MenuButtons : MonoBehaviour
     {
         LoadManager.MainMenu();
     }
+
+    public void Exit()
+    {
+        LoadManager.Exit();
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public static float PlayerCurrentPositionY; 
+    public static float PlayerCurrentPositionY;
 
     [SerializeField] private float _speedHorizontal = 8f;
     [SerializeField] private float _speedVertical = 10f;
@@ -34,11 +34,11 @@ public class PlayerController : MonoBehaviour
         PlayerCurrentPositionY = transform.position.y;
     }
 
-  
+
 
     private void FixedUpdate()
     {
-        _input = Input.GetAxis("Horizontal");
+        _input = Input.GetAxis("Horizontal") + Input.acceleration.x;
         _rigidbody.velocity = new Vector2(_input * _speedHorizontal, _rigidbody.velocity.y);
 
     }
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerDirection()
     {
-        if (_input>0.01f || _input < -0.01f)
+        if (_input > 0.01f || _input < -0.01f)
         {
             _sprite.flipX = _input < 0;
         }
@@ -72,9 +72,9 @@ public class PlayerController : MonoBehaviour
             _rigidbody.position = new Vector2(_rigidbody.position.x - (float)GameSettings.screenWidth / 100, _rigidbody.position.y);
         }
 
-        if (_rigidbody.position.x <(-_limitPosition))
+        if (_rigidbody.position.x < (-_limitPosition))
         {
-            _rigidbody.position = new Vector2 (_rigidbody.position.x + (float)GameSettings.screenWidth / 100, _rigidbody.position.y);
+            _rigidbody.position = new Vector2(_rigidbody.position.x + (float)GameSettings.screenWidth / 100, _rigidbody.position.y);
         }
     }
 
