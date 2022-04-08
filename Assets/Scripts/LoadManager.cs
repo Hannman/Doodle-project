@@ -18,7 +18,6 @@ public static class LoadManager
 
     public static void Lose()
     {
-        GameSettings.currentScore = 0;
         SceneManager.LoadScene("Lose");
     }
 
@@ -27,4 +26,8 @@ public static class LoadManager
         SceneManager.LoadScene("MainMenu");
     }
 
+    public static void Exit()
+    {
+        Application.Quit();
+    }
 }

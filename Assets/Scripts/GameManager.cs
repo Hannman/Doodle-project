@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerController.PlayerCurrentPositionY + 5f < Camera.main.transform.position.y)
         {
-            LoadManager.Win();
+            LoadManager.Lose();
         }
 
     }
