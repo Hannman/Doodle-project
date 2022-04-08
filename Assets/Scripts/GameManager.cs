@@ -16,18 +16,37 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        score = GameSettings.currentScore;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        CheckLose();
     }
 
-    public static void AddPoints(int value) 
+    private void CheckLose()
+    {
+        if (PlayerController.PlayerCurrentPositionY + 5f < Camera.main.transform.position.y)
+        {
+            LoadManager.Win();
+        }
+
+    }
+    private void CheckWin()
+    {
+        if (score - 1000 >= GameSettings.currentScore)
+        {
+            GameSettings.currentScore = score;
+            GameSettings.level++;
+            LoadManager.Win();
+        }
+    }
+
+    public static void AddPoints(int value)
     {
         score += value;
         instance.scoreText.text = $"Score: {score}";
+        instance.CheckWin();
     }
 }

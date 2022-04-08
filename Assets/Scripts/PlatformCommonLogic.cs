@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformCommonLogic : MonoBehaviour
 {
     private bool counted = false;
-    protected int value;
+    protected int value; //ценность платформы в очках 
     protected void ExistenceEvaluation()
     {
         var deltaX = Camera.main.transform.position.y - this.transform.position.y;
