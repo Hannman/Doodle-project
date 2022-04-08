@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\GameSettings.cs" />
     <Compile Include="Assets\Scripts\PlatformBrownLogic.cs" />
     <Compile Include="Assets\Scripts\PlatformCommonLogic.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

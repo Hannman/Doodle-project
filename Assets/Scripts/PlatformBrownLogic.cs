@@ -10,11 +10,15 @@ public class PlatformBrownLogic : PlatformCommonLogic
         ExistenceEvaluation();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        _poofSpriteRenderer.enabled = true;
-        StartCoroutine(poofSequence(0.1f));
+        if (collision.relativeVelocity.y <= 0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            _poofSpriteRenderer.enabled = true;
+            StartCoroutine(poofSequence(0.1f));
+        }
+       
     }
 
     private IEnumerator poofSequence(float sec)
